@@ -142,7 +142,7 @@ namespace NuGetCredentialProvider.RequestHandlers
             Logger.Verbose(string.Format(Resources.IsRetry, request.IsRetry));
             if (request.IsRetry)
             {
-                Logger.Verbose(string.Format(Resources.InvalidatingCachedSessionToken, request.Uri.AbsoluteUri));
+                Logger.Warning(string.Format(Resources.InvalidatingCachedSessionToken, request.Uri.AbsoluteUri));
                 cache?.Remove(request.Uri);
                 return false;
             }
